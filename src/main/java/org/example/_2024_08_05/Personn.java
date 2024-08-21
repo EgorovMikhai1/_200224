@@ -41,6 +41,7 @@ public class Personn {
         return famousCanidate;
     }
 
+    //todo
     private boolean knows(Personn famous) {
 
         return this.personn.id == famous.id;
