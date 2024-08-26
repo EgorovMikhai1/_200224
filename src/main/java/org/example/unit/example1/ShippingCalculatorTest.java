@@ -40,11 +40,13 @@ public class ShippingCalculatorTest {
      */
     @DisplayName("Test calculateShippingCost with @CsvSource")
     @ParameterizedTest
-    @CsvSource({
+    @CsvSource(
+            {
         "1.0, 10.0, 16.0",
         "2.5, 20.0, 22.0",
         "5.0, 5.0, 16.5"
-    })
+            }
+            )
     void testCalculateShippingCostWithCsvSource(double weight, double distance, double expectedCost) {
         double cost = ShippingCalculator.calculateShippingCost(weight, distance);
         assertEquals(expectedCost, cost);
@@ -72,50 +74,49 @@ public class ShippingCalculatorTest {
         );
     }
 
-    /**
-     * @EnumSource: Проверяет точное соответствие вычисленной
-     * стоимости ожидаемому результату, используя значения
-     * из перечисления WeightDistancePair.
-     *
-     * Это позволяет организовать тестовые данные в виде перечисления,
-     * что делает код тестов более читаемым и организованным.
-     * @param pair
-     */
-    @DisplayName("Test calculateShippingCost with @EnumSource")
-    @ParameterizedTest
-    @EnumSource(WeightDistancePair.class)
-    void testCalculateShippingCostWithEnumSource(WeightDistancePair pair) {
-        double cost = ShippingCalculator.calculateShippingCost(pair.getWeight(), pair.getDistance());
-        assertEquals(pair.getExpectedCost(), cost);
-    }
-
-    enum WeightDistancePair {
-        CASE1(1.0, 10.0, 16.0),
-        CASE2(2.5, 20.0, 22.0),
-        CASE3(5.0, 5.0, 16.5);
-
-        private final double weight;
-        private final double distance;
-        private final double expectedCost;
-
-        WeightDistancePair(double weight, double distance, double expectedCost) {
-            this.weight = weight;
-            this.distance = distance;
-            this.expectedCost = expectedCost;
-        }
-
-        public double getWeight() {
-            return weight;
-        }
-
-        public double getDistance() {
-            return distance;
-        }
-
-        public double getExpectedCost() {
-            return expectedCost;
-        }
-    }
+//    /**
+//     * @EnumSource: Проверяет точное соответствие вычисленной
+//     * стоимости ожидаемому результату, используя значения
+//     * из перечисления WeightDistancePair.
+//     *
+//     * Это позволяет организовать тестовые данные в виде перечисления,
+//     * что делает код тестов более читаемым и организованным.
+//     * @param pair
+//     */
+//    @DisplayName("Test calculateShippingCost with @EnumSource")
+//    @ParameterizedTest(WeightDistancePair.class)
+//    void testCalculateShippingCostWithEnumSource(WeightDistancePair pair) {
+//        double cost = ShippingCalculator.calculateShippingCost(pair.getWeight(), pair.getDistance());
+//        assertEquals(pair.getExpectedCost(), cost);
+//    }
+//
+//    enum WeightDistancePair {
+//        CASE1(1.0, 10.0, 16.0),
+//        CASE2(2.5, 20.0, 22.0),
+//        CASE3(5.0, 5.0, 16.5);
+//
+//        private final double weight;
+//        private final double distance;
+//        private final double expectedCost;
+//
+//        WeightDistancePair(double weight, double distance, double expectedCost) {
+//            this.weight = weight;
+//            this.distance = distance;
+//            this.expectedCost = expectedCost;
+//        }
+//
+//        public double getWeight() {
+//            return weight;
+//        }
+//
+//        public double getDistance() {
+//            return distance;
+//        }
+//
+//        public double getExpectedCost() {
+//            return expectedCost;
+//        }
+//    }
 
     /**
      * @CsvFileSource: То же что и выше только из CSV-файла

@@ -1,7 +1,13 @@
 package org.example;
 
+import java.util.List;
+import java.util.function.Function;
+
 public class Test {
     public static void main(String[] args) {
+
+
+
         int size = 10;
         char[][] grid = new char[size][5555];
 
