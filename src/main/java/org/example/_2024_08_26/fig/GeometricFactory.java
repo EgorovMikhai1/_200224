@@ -13,14 +13,16 @@ public class GeometricFactory {
             shapes.add(new Line(randomDouble()));
         }
 
+
         for (int i = 0; i < 20; i++) {
             shapes.add(new Circle(randomDouble()));
         }
 
         for (int i = 0; i < 30; i++) {
-            shapes.add(new Triangle(randomDouble(), randomDouble(), randomDouble()));
+            shapes.add(generateValidTriangle());
         }
 
+        // Генерация квадратов
         for (int i = 0; i < 50; i++) {
             double side = randomDouble();
             shapes.add(new Square(side, side));
@@ -29,8 +31,23 @@ public class GeometricFactory {
         return shapes;
     }
 
+    private static Triangle generateValidTriangle() {
+        double a, b, c;
+
+        do {
+            a = randomDouble();
+            b = randomDouble();
+            c = randomDouble();
+        } while (!isValidTriangle(a, b, c));
+
+        return new Triangle(a, b, c);
+    }
+
+    private static boolean isValidTriangle(double a, double b, double c) {
+        return a + b > c && a + c > b && b + c > a;
+    }
+
     private static double randomDouble() {
-        Random random = new Random();
-        return 1.0 + (10.0 - 1.0) * random.nextDouble();
+        return Math.random() * 100;
     }
 }
