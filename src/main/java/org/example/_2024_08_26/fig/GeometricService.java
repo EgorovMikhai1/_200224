@@ -21,6 +21,10 @@ public class GeometricService {
 
     //Метод возвращает список треугольников (класса Triangle), у которых радиус вписанного круга больше среднего радиуса всех кругов в коллекции.
     public static List<Triangle> findTrianglesWithLargerInscribedCircleThanAverage(List<Geometric> geometries) {
+        //S = sqrt(p * (p-a) * (p-b) * (p-c))
+        //p = a+b+c/ 2
+        //r = S / p
+
         return null;
     }
 
