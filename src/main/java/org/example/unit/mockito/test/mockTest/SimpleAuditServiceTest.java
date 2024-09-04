@@ -1,10 +1,7 @@
 package org.example.unit.mockito.test.mockTest;
 
 
-import org.example.unit.mockito.mock.AuditService;
-import org.example.unit.mockito.mock.Trade;
-import org.example.unit.mockito.mock.TradeRepository;
-import org.example.unit.mockito.mock.TradingService;
+import org.example.unit.mockito.mock.*;
 import org.mockito.*;
 import static org.mockito.Mockito.*;
 import org.junit.jupiter.api.Test;
@@ -30,7 +27,8 @@ class SimpleAuditServiceTest {
 		when(tradeRepository.createTrade(trade)).thenReturn(anyLong());
 
 
-		TradingService tradingService = new SimpleTradingService(tradeRepository, auditService);
+		TradingService tradingService =
+				new SimpleTradingService(tradeRepository, auditService);
 		tradingService.createTrade(trade);
 
 		verify(auditService).logNewTrade(trade);
