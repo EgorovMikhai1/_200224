@@ -2,9 +2,10 @@ package org.example.unit.mockito.test.dummyTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import PROF.unit.mockito.dummy.*;
+import org.example.unit.mockito.dummy.*;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+
 
 public class DummyObjectDemo {
 
