@@ -1,7 +1,5 @@
-package org.example.unit.mockito.test.reactorTest;//package javaProf.unit.mockito.test.reactorTest;
+//package org.example.unit.mockito.test.reactorTest;
 //
-//import javaProf.unit.mockito.reactor.ReactorCoolingSystem;
-//import javaProf.unit.mockito.reactor.Thermometer;
 //import org.junit.jupiter.api.Test;
 //import org.junit.jupiter.api.extension.ExtendWith;
 //import org.mockito.*;
@@ -26,7 +24,7 @@ package org.example.unit.mockito.test.reactorTest;//package javaProf.unit.mockit
 //        reactorCoolingSystem.setTemperatureThreshold(240.0);
 //        reactorCoolingSystem.checkReactorCoolingSystem();
 //        assertTrue(reactorCoolingSystem.isOn());
-//        verify(thermometer, times(1.txt)).getTemperature();
+//        verify(thermometer, times(1)).getTemperature();
 //    }
 //
 //    @Test
@@ -35,6 +33,6 @@ package org.example.unit.mockito.test.reactorTest;//package javaProf.unit.mockit
 //        reactorCoolingSystem.setTemperatureThreshold(240.0);
 //        reactorCoolingSystem.checkReactorCoolingSystem();
 //        assertFalse(reactorCoolingSystem.isOn());
-//        verify(thermometer, times(1.txt)).getTemperature();
+//        verify(thermometer, times(1)).getTemperature();
 //    }
 //}
